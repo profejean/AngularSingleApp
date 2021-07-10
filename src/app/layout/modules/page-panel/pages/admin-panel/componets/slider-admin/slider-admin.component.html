@@ -1,0 +1,40 @@
+<app-navbar-admin></app-navbar-admin>
+
+<div class="container">
+<table class="table mt-5 ml-5 mr-5 table-striped table-bordered table-hover text-center">
+    <thead>
+      <tr>
+        <th colspan="5" class="text-center">List slides objects <a routerLink="/slider-form" class="btn btn-primary float-right">Create</a></th>
+    
+      </tr>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">TITLE</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">CREATE AT</th>
+        <th colspan="2">OPTION</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let slider of slider">
+      <tr>
+        <th scope="row">{{slider.home_id}}</th>
+        <td>{{slider.home_title}}</td>
+        <td>{{slider.home_description}}</td>
+        <td>{{slider.created_at}}</td>
+        <td>
+          <button class="btn btn-danger mr-5" (click)="deleteSlider(slider.home_id!)">
+            Delete
+          </button>
+
+          <button class="btn btn-warning" [routerLink]="['/slider-form', slider.home_id]">
+            Edit
+          </button>
+        
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+

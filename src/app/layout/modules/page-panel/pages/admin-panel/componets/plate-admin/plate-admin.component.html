@@ -1,0 +1,42 @@
+<app-navbar-admin></app-navbar-admin>
+<div class="container">
+<table class="table mt-5 ml-5 mr-5 table-striped table-bordered table-hover text-center">
+    <thead>
+      <tr>
+        <th colspan="7" class="text-center">List menu objects <a routerLink="/plate-form" class="btn btn-primary float-right">Create</a></th>
+    
+      </tr>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">PLATE</th>
+        <th scope="col">CONTENT</th>
+        <th scope="col">PRICE</th>
+        <th scope="col">CATEGORY</th>
+        <th scope="col">CREATE AT</th>
+        <th colspan="2">OPTION</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let menu of menu">
+      <tr>
+        <th scope="row">{{menu.menu_id}}</th>
+        <td>{{menu.menu_plato}}</td>
+        <td>{{menu.menu_contenido}}</td>
+        <td>{{menu.menu_precio}}</td>
+        <td>{{menu.menu_category}}</td>
+        <td>{{menu.created_at}}</td>
+        <td>
+          <button class="btn btn-danger mr-5" (click)="deleteMenus(menu.menu_id!)">
+            Delete
+          </button>
+          <button class="btn btn-warning" [routerLink]="['/plate-form/', menu.menu_id]">
+            Edit
+          </button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+
+

@@ -1,0 +1,25 @@
+<app-navbar-admin></app-navbar-admin>
+<div class="container mt-5">
+    <div class="card card-body">
+        <form (submit)="updateUs()">
+            <div class="form-group">
+              <label for="us_title">Title</label>
+              <input type="text" class="form-control" id="us_title" name="us_title" [(ngModel)]="us.us_title">              
+            </div>
+            <div class="form-group">         
+              <textarea name="us_text_uno" [(ngModel)]="us.us_text_uno" id="us_text_uno" rows="4" placeholder="Text One" style="width: 100%;"></textarea>
+            </div>
+            <div class="form-group">         
+                <textarea name="us_text_dos" [(ngModel)]="us.us_text_dos" id="us_text_dos" rows="4" placeholder="Text Two" style="width: 100%;"></textarea>
+              </div>
+            <div class="form-group">
+                <label for="us_img">Image</label>
+                <input type="file" class="form-control" id="us_img" name="us_img" [(ngModel)]="us.us_img" (change)="onChange($event)">              
+              </div>
+           
+            <button class="btn btn-primary btn-block">
+              Save
+            </button>
+          </form>
+    </div>
+</div>

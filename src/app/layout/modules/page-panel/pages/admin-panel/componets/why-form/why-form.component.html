@@ -1,0 +1,23 @@
+<app-navbar-admin></app-navbar-admin>
+<div class="container mt-5">
+    <div class="card card-body">
+        <form (submit)="edit ? updateWhy() : submitWhy()">
+            <div class="form-group">
+              <label for="why_title">Title</label>
+              <input type="text" class="form-control" id="why_title" name="why_title" [(ngModel)]="why.why_title">              
+            </div>
+            <div class="form-group">         
+              <textarea name="why_description" [(ngModel)]="why.why_description" id="why_description" rows="4" placeholder="Description" style="width: 100%;"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="why_number">Title</label>
+                <input type="number" class="form-control" id="why_number" name="why_number" [(ngModel)]="why.why_number">              
+              </div>
+           
+           
+            <button class="btn btn-primary btn-block">
+              Save
+            </button>
+          </form>
+    </div>
+</div>

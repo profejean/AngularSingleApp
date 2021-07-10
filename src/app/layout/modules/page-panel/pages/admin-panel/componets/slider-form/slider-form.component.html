@@ -1,0 +1,27 @@
+<app-navbar-admin></app-navbar-admin>
+
+<div class="container mt-5">
+    <div class="card card-body">
+        <form (submit)="edit ? updateSlider() : submitSlider()">
+            <div class="form-group">
+              <label for="home_title">Title</label>
+              <input type="text" class="form-control" id="home_title" name="home_title" [(ngModel)]="slider.home_title">              
+            </div>
+            <div class="form-group">         
+              <textarea name="home_description" [(ngModel)]="slider.home_description"  id="home_description" rows="4" placeholder="Description" style="width: 100%;"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="home_img">Image</label>
+                <input type="file" class="form-control" id="home_img" name="home_img"  (change)="onChange($event)" >             
+              </div>
+           
+            <button class="btn btn-primary btn-block">
+              Save
+            </button>
+          </form>
+    </div>
+</div>
+
+
+
+

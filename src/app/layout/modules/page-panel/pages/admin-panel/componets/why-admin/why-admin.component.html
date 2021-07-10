@@ -1,0 +1,43 @@
+<app-navbar-admin></app-navbar-admin>
+<div class="container">
+<table class="table mt-5 ml-5 mr-5 table-striped table-bordered table-hover text-center">
+    <thead>
+      <tr>
+        <th colspan="7" class="text-center">List Why Us objects <a routerLink="/why-form" class="btn btn-primary float-right">Create</a></th>
+    
+      </tr>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">TITLE</th>
+        <th scope="col">DESCRIPTION</th>
+        <th scope="col">NUMBER</th>
+        <th scope="col">CREATE AT</th>
+        <th colspan="2">OPTION</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let why of why">
+      <tr>
+        <th scope="row">{{why.why_id}}</th>
+        <td>{{why.why_title}}</td>
+        <td>{{why.why_description}}</td>
+        <td>{{why.why_number}}</td>
+        <td>{{why.created_at}}</td>
+        <td>
+          <button class="btn btn-danger mr-5" (click)="deleteWhys(why.why_id!)">
+            Delete
+          </button>
+          
+        </td>
+        <td>
+            <button class="btn btn-warning" [routerLink]="['/why-form', why.why_id]">
+                Edit
+              </button>
+        </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+
+
+
